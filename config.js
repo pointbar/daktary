@@ -4,7 +4,7 @@ const GH_ID = 'NGEzOWM4YzE4NjA3NDkxNWU1NDY='
 const CREWS = {crews:
   [
     { title: 'Bienvenue sur multiBàO',
-      label: 'Accueil Multibao',
+      label: 'Multibao',
       owner: 'multibao'
     }, {
       title: 'Réseau Transition BE',
