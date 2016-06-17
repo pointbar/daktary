@@ -54,14 +54,6 @@ class GithubUrl {
     return `https://api.github.com/users/${owner}/repos` +
            `?client_id=${keys.id}&client_secret=${keys.secret}`
   }
-  getProseUrl() {
-    const {owner, repo, branch, path} = this.ghData
-    return `http://prose.io/#${owner}/${repo}/edit/${branch}${path}`
-  }
-  getGhUrl() {
-    const {owner, repo, branch, path} = this.ghData
-    return `https://github.com/${owner}/${repo}/blob/${branch}${path}`
-  }
   getHtmlBlob() {
     return new Promise(
       (resolve, reject) => {
