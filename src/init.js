@@ -11,5 +11,5 @@ window.addEventListener('load', () => {
     window.location.reload(true)
   }
 })
-const template = new Template()
-const layout = new Layout()
+const template = new Templates()
+const layout = new Layouts()

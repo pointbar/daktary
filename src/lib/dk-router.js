@@ -5,7 +5,7 @@
    * and queries option Url.
    *
    */
-const Router = class Router {
+class Router {
   constructor() {
     this.url =  ''
     this.currentRoute = ''
@@ -32,7 +32,7 @@ const Router = class Router {
     this.params = {}
     this.queries = {}
   }
-  _setQueries() {
+  _setQueryParameters() {
     const queries = this.url.split('?')[1]
     if (queries) {
       queries.split('&').map(query => {
@@ -43,31 +43,31 @@ const Router = class Router {
   _setParams(pattern) {
     const paramsName = pattern.split('/')
     const paramsValue = this._urlWithoutParams().split('/')
+
     for (let index in paramsName) {
       // Store all remain values
-      if (paramsName[index].match(/\(\.\*\)/)) {
+      if (paramsName[index].indexOf('(.*)') !== -1) {
         this.params[paramsName[index].match(/^:(\w+)/)[1]] =
           paramsValue.slice(index).join('/')
       // Store single value
-      } else if (paramsName[index].match(/^:/)) {
+      } else if (paramsName[index].startsWith(':')) {
         this.params[paramsName[index].match(/^:(\w+)/)[1]] =
           paramsValue[index]
       }
     }
   }
   _patternToRegex(pattern) {
-    const regex = []
-    regex.push('^')
+    const regex = ['^']
     pattern.split('/').map(patternItem => {
       // Capture a parameter
-      if (patternItem.match(/^:/)) {
+      if (patternItem.startsWith(':')) {
         let regTmp = '[0-9A-Za-z\u00C0-\u017F\-\_\.]*'
         // Capture all the parameters
-        if (patternItem.match(/\(\.\*\)$/)) {
+        if (patternItem.endsWith('(.*)')) {
           regTmp = '[0-9A-Za-z\u00C0-\u017F\-\_\.\/]*'
         }
         // Capture optional parameters
-        if (patternItem.match(/\?$/)) {
+        if (patternItem.endsWith('?')) {
           regex.pop()
           regTmp = '(\/[0-9A-Za-z\u00C0-\u017F\-\_\.\/]*|)'
         }
@@ -92,7 +92,7 @@ const Router = class Router {
       if (this._checkPatternWithUrl(route.pattern)) {
         // Execute the action attach on a route
         this._setParams(route.pattern)
-        this._setQueries()
+        this._setQueryParameters()
         ;(route.action.bind(this))()
         break
       }

@@ -1,4 +1,4 @@
-class Tpl {
+class Template {
   constructor(name) {
     this._htmlTpl = ''
     this._name = name
@@ -42,8 +42,8 @@ class Tpl {
   }
 }
 
-class Template {
+class Templates {
   create(name) {
-    this[name] = new Tpl(name)
+    this[name] = new Template(name)
   }
 }
