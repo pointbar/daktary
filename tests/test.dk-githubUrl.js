@@ -19,4 +19,18 @@ describe('#GhUrl', () => {
       'language:Markdown+user:multibao'
     )).to.be(true)
   })
+  it('should generate an URL to GitHub', () => {
+    const githubQuery = new GithubUrl(
+      {owner: 'mltb', repo: 'model', branch: 'master', path: '/art/ombes.md'})
+    expect(githubQuery.getGhUrl()).to.be(
+      'https://github.com/mltb/model/blob/master//art/ombes.md'
+    )
+  })
+  it('should generate an URL to prose', () => {
+    const githubQuery = new GithubUrl(
+      {owner: 'mltb', repo: 'model', branch: 'master', path: '/art/ombes.md'})
+    expect(githubQuery.getProseUrl()).to.be(
+      'http://prose.io/#mltb/model/edit/master//art/ombes.md'
+    )
+  })
 })
