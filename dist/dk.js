@@ -221,21 +221,6 @@ var Layout = function () {
 
   return Layout;
 }();
-
-var Layouts = function () {
-  function Layouts() {
-    _classCallCheck(this, Layouts);
-  }
-
-  _createClass(Layouts, [{
-    key: 'create',
-    value: function create(name) {
-      this[name] = new Layout();
-    }
-  }]);
-
-  return Layouts;
-}();
 'use strict';
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
@@ -369,16 +354,20 @@ var Router = function () {
   }, {
     key: '_setParams',
     value: function _setParams(pattern) {
-      var paramsName = pattern.split('/');
-      var paramsValue = this._urlWithoutParams().split('/');
-
-      for (var index in paramsName) {
+      var patternItems = pattern.split('/');
+      var urlValues = this._urlWithoutParams().split('/');
+      for (var index in patternItems) {
         // Store all remain values
-        if (paramsName[index].indexOf('(.*)') !== -1) {
-          this.params[paramsName[index].match(/^:(\w+)/)[1]] = paramsValue.slice(index).join('/');
+        var patternItem = patternItems[index];
+        if (!patternItem.startsWith(':')) {
+          continue;
+        }
+        var paramName = patternItem.match(/^:(\w+)/)[1];
+        if (patternItem.indexOf('(.*)') !== -1) {
+          this.params[paramName] = urlValues.slice(index).join('/');
           // Store single value
-        } else if (paramsName[index].startsWith(':')) {
-            this.params[paramsName[index].match(/^:(\w+)/)[1]] = paramsValue[index];
+        } else {
+            this.params[paramName] = urlValues[index];
           }
       }
     }
@@ -540,21 +529,6 @@ var Template = function () {
 
   return Template;
 }();
-
-var Templates = function () {
-  function Templates() {
-    _classCallCheck(this, Templates);
-  }
-
-  _createClass(Templates, [{
-    key: 'create',
-    value: function create(name) {
-      this[name] = new Template(name);
-    }
-  }]);
-
-  return Templates;
-}();
 'use strict';
 
 var GH_SECRET = 'M2NmYjI1YmNlOWE4MGFjN2E2NzIxZTg5YzkwMGVhZjM5NzEwN2Y2MA==';
@@ -565,9 +539,13 @@ var OWNER = 'multibao';
 
 window.addEventListener('hashchange', function () {
   var ghUrl = window.location.toString().split('#')[1];
-  router.go(ghUrl);
+  var anchor = document.querySelector('a[name="' + ghUrl + '"]');
+  if (anchor) {
+    anchor.scrollIntoView();
+  } else {
+    router.go(ghUrl);
+  }
 });
-
 window.addEventListener('load', function () {
   var ghUrl = window.location.toString().split('#')[1];
   router.go(ghUrl);
@@ -576,8 +554,8 @@ window.addEventListener('load', function () {
     window.location.reload(true);
   }
 });
-var template = new Templates();
-var layout = new Layouts();
+var template = {};
+var layout = {};
 'use strict';
 
 /**
@@ -585,13 +563,13 @@ var layout = new Layouts();
  *
  */
 {
-  layout.create('folders');
+  layout.folders = new Layout('folders');
   layout.folders.html('\n  <header class="container">\n    <h1><a href="">multi<span>BàO</span></a></h1>\n    <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search">\n    </div>\n  </header>\n  <main class="container">\n    <div id="breadcrumb" class="breadcrumb" data-template="breadcrumb">\n    </div>\n    <section id="gh-list" class="gh-list" data-template="folders">\n    </section>\n  </main>');
 }
 'use strict';
 
 {
-  layout.create('home');
+  layout.home = new Layout('home');
   layout.home.html('\n  <header class="home-header clearfix container">\n    <h1>multi<span>BàO</span></h1>\n  </header>\n  <main>\n    <section class="home-intro">\n        <div class="home-intro-content container">\n          <h2>Partager en équipe et au monde <span>ses apprentissages sur le faire ensemble</span></h2>\n          <a href="#multibao/contributions/blob/master/pages/commencer_ici.md">Commencer ici</a>\n          <a href="#multibao/documentation/blob/master/README.md">Guide d\'utilisation</a>\n        </div>\n    </section>\n    <section id="gh-crew-list" class="container">\n      <ul data-template="crews">\n      </ul>\n    </section>\n  </main>');
 }
 'use strict';
@@ -601,7 +579,7 @@ var layout = new Layouts();
  *
  */
 {
-  layout.create('repos');
+  layout.repos = new Layout('repos');
   layout.repos.html('\n  <header class="container">\n    <h1><a href="">multi<span>BàO</span></a></h1>\n    <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search">\n    </div>\n  </header>\n  <main class="container">\n    <div id="breadcrumb" class="breadcrumb" data-template="breadcrumb">\n    </div>\n    <section id="gh-list" class="gh-list" data-template="repos">\n    </section>\n  </main>');
 }
 'use strict';
@@ -611,8 +589,8 @@ var layout = new Layouts();
  *
  */
 {
-  layout.create('searchList');
-  layout.searchList.html('\n  <header class="container">\n    <h1><a href="">multi<span>BàO</span></a></h1>\n    <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search">\n    </div>\n  </header>\n  <main class="container">\n    <section class="search-result search-result-blank">\n    il n\'y a pas de résultat pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    <section class="search-result">\n      <span>3</span> résultat(s) pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    <section id="gh-list" class="gh-list" data-template="searchList">\n    </section>\n  </main>');
+  layout.searchList = new Layout('searchList');
+  layout.searchList.html('\n  <header class="container">\n    <h1><a href="">multi<span>BàO</span></a></h1>\n    <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search">\n    </div>\n  </header>\n  <main class="container">\n    <!--\n    <section class="search-result search-result-blank">\n    il n\'y a pas de résultat pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    <section class="search-result">\n      <span>3</span> résultat(s) pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    -->\n    <section id="gh-list" class="gh-list" data-template="searchList">\n    </section>\n  </main>');
 }
 'use strict';
 
@@ -621,7 +599,7 @@ var layout = new Layouts();
 *
 */
 {
-  layout.create('viewer');
+  layout.viewer = new Layout('viewer');
   layout.viewer.html('\n    <main data-template="contribution" class="container">\n    </main>\n  ');
 }
 'use strict';
@@ -656,8 +634,7 @@ router.route(':owner', function () {
 'use strict';
 
 {
-  template.create('breadcrumb');
-
+  template.breadcrumb = new Template('breadcrumb');
   template.breadcrumb.data = function () {
     var _router$params = router.params;
     var owner = _router$params.owner;
@@ -709,9 +686,9 @@ router.route(':owner', function () {
       var content = _ref.content;
       var prose_url = _ref.prose_url;
       var git_url = _ref.git_url;
-      return '\n    <aside class="contribution-tools">\n      <a href="' + git_url + '" class="github-link">Voir sur Github</a>\n      <a href="' + prose_url + '" class="proseio-link">Editer sur prose.io</a>\n      <a href="" class="help-link">Aide</a>\n      <a href="" class="page-top">Haut de page</a>\n    </aside>\n    <div id="parentRepo" class="breadcrumbs">\n      À retrouver dans le dépôt : <a href="' + link + '">' + label + '</a>\n    </div>\n    <article id="contribution">\n      ' + content + '\n    </article>\n  ';
+      return '\n    <a name="top"></a>\n    <aside class="contribution-tools">\n      <a href="' + git_url + '" class="github-link">Voir sur Github</a>\n      <a href="' + prose_url + '" class="proseio-link">Editer sur prose.io</a>\n      <a href="#multibao/documentation/blob/master/README.md" class="help-link">Aide</a>\n      <a href="#top" class="page-top">Haut de page</a>\n    </aside>\n    <div id="parentRepo" class="breadcrumbs">\n      À retrouver dans le dépôt : <a href="' + link + '">' + label + '</a>\n    </div>\n    <article id="contribution">\n      ' + content + '\n    </article>\n  ';
     };
-    template.create('contribution');
+    template.contribution = new Template('contribution');
     template.contribution.data = function () {
       var ghApi = new GithubUrl(router.params);
       ghApi.getHtmlBlob().then(function (htmlResponse) {
@@ -752,7 +729,7 @@ router.route(':owner', function () {
       return '<li><a title="' + title + '" href="#' + owner + '" data-owner="' + owner + '">\n       <h3>' + label + '</h3><p>' + title + '</p></a>\n     </li>';
     };
 
-    template.create('crews');
+    template.crews = new Template('crews');
     template.crews.data = function () {
       var ghApi = new GithubUrl({ owner: OWNER, repo: 'organisations' });
       var html = [];
@@ -819,8 +796,7 @@ router.route(':owner', function () {
       return '<article class="gh-list-item gh-type-folder">\n      <h2 class="gh-list-title"><a href="#' + url + '">' + title + '</a></h2>\n    </article>';
     };
 
-    template.create('folders');
-
+    template.folders = new Template('folders');
     template.folders.data = function () {
       var ghApi = new GithubUrl(router.params);
       var html = [];
@@ -912,8 +888,7 @@ router.route(':owner', function () {
       return '<article class="gh-list-item gh-type-repo">\n      <h2 class="gh-list-title"><a href="#' + url + '">' + title + '</a></h2>\n    </article>';
     };
 
-    template.create('repos');
-
+    template.repos = new Template('repos');
     template.repos.data = function () {
       var ghApi = new GithubUrl(router.params);
       var html = [];
@@ -959,8 +934,7 @@ router.route(':owner', function () {
 'use strict';
 
 {
-  template.create('search');
-
+  template.search = new Template('search');
   template.search.data = function () {
     template.search.html('\n      <div class="search-engine">\n        <fieldset>\n          <input id="gh-search" type="text" placeholder="Recherche">\n          <input id="button-gh-search" value="Rechercher" type="submit">\n        </fieldset>\n      </div>\n    ');
     template.search.events({
@@ -1004,7 +978,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
       return '<article class="gh-list-item gh-type-file">\n        <h2 class="gh-list-title"><a href="#' + url + '">' + title + '</a></h2>\n     </article>';
     };
 
-    template.create('searchList');
+    template.searchList = new Template('searchList');
     template.searchList.data = function () {
       var _router$queries$q$mat = router.queries.q.match(/(.*)\+language:Markdown\+user:([0-9A-Za-z\u00C0-\u017F\-\_\.]*)/);
 
