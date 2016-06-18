@@ -41,9 +41,3 @@ class Template {
     this._events = events
   }
 }
-
-class Templates {
-  create(name) {
-    this[name] = new Template(name)
-  }
-}

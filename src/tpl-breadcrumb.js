@@ -1,6 +1,5 @@
 {
-  template.create('breadcrumb')
-
+  template.breadcrumb = new Template('breadcrumb')
   template.breadcrumb.data = () => {
     const {owner, repo, branch, path} = router.params
     const folders = []

@@ -3,7 +3,7 @@
  *
  */
 {
-  layout.create('folders')
+  layout.folders = new Layout('folders')
   layout.folders.html(`
   <header class="container">
     <h1><a href="">multi<span>BàO</span></a></h1>

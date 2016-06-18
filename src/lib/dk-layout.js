@@ -23,8 +23,3 @@ class Layout {
       return template[tplName].render()
     })}
 }
-class Layouts {
-  create(name) {
-    this[name] = new Layout()
-  }
-}
