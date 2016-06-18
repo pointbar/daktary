@@ -1,16 +1,16 @@
 describe('#TEMPLATE', () => {
   it('should create basic template', () => {
-    const template = new Template()
+    const template = new Templates()
     template.create('main')
     expect(template.main).to.be.an('object')
   })
   it('should retrieve template\'s name', () => {
-    const template = new Template()
+    const template = new Templates()
     template.create('paladin')
     expect(template.paladin._name).to.be('paladin')
   })
   it('should retrieve template\'s name', () => {
-    const template = new Template()
+    const template = new Templates()
     template.create('paladin')
     template.paladin.html(`<h1>Hello</h1>`)
     template.paladin.events({
@@ -20,13 +20,13 @@ describe('#TEMPLATE', () => {
     expect(template.paladin._events).to.have.property('keypress h1')
   })
   it('should retrieves simple html of a template', () => {
-    const template = new Template()
+    const template = new Templates()
     template.create('main')
     template.main.html(`<h1>Hello</h1>`)
     expect(template.main._htmlTpl.querySelector('h1').innerHTML).to.be('Hello')
   })
   it('should retrieves html and data of a template', () => {
-    const template = new Template()
+    const template = new Templates()
     template.create('main')
     const {wat} = {
       wat: 'world'
@@ -35,7 +35,7 @@ describe('#TEMPLATE', () => {
     expect(template.main._htmlTpl.querySelector('h1').innerHTML).to.be('Hello world')
   })
   it('should retrieves html with async data', (done) => {
-    const template = new Template()
+    const template = new Templates()
     template.create('paladin')
     window.setTimeout(() => {
       const {world} = {world: 'World!'}

@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # Merge JS files and convert in ES5
-babel \
+babel --presets es2015 \
   ./src/lib/dk-githubUrl.js \
   ./src/lib/dk-layout.js \
   ./src/lib/dk-markdown.js \
@@ -24,10 +24,10 @@ babel \
   ./src/tpl-searchList.js > dist/dk.js
 
 # Minify js files
-uglifyjs dist/dk.js --compress -o dist/dk.min.js
+./node_modules/uglifyjs/bin/uglifyjs dist/dk.js --compress -o dist/dk.min.js
 
 # Merge and minify css files
-uglifycss \
+./node_modules/uglifycss/uglifycss \
   ./css/reset.css \
   ./css/daktary.css \
   ./css/layout-home.css \
