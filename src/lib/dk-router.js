@@ -41,18 +41,20 @@ class Router {
     }
   }
   _setParams(pattern) {
-    const paramsName = pattern.split('/')
-    const paramsValue = this._urlWithoutParams().split('/')
-
-    for (let index in paramsName) {
+    const patternItems = pattern.split('/')
+    const urlValues = this._urlWithoutParams().split('/')
+    for (let index in patternItems) {
       // Store all remain values
-      if (paramsName[index].indexOf('(.*)') !== -1) {
-        this.params[paramsName[index].match(/^:(\w+)/)[1]] =
-          paramsValue.slice(index).join('/')
+      const patternItem = patternItems[index]
+      if (! patternItem.startsWith(':')) {
+        continue
+      }
+      const paramName = patternItem.match(/^:(\w+)/)[1]
+      if (patternItem.indexOf('(.*)') !== -1) {
+        this.params[paramName] = urlValues.slice(index).join('/')
       // Store single value
-      } else if (paramsName[index].startsWith(':')) {
-        this.params[paramsName[index].match(/^:(\w+)/)[1]] =
-          paramsValue[index]
+      } else {
+        this.params[paramName] = urlValues[index]
       }
     }
   }
