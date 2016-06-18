@@ -43,8 +43,7 @@
       <h2 class="gh-list-title"><a href="#${url}">${title}</a></h2>
     </article>`
 
-  template.create('folders')
-
+  template.folders = new Template('folders')
   template.folders.data = () => {
     const ghApi = new GithubUrl(router.params)
     const html = []

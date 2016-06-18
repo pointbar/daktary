@@ -10,7 +10,7 @@
        <h3>${label}</h3><p>${title}</p></a>
      </li>`
 
-  template.create('crews')
+  template.crews = new Template('crews')
   template.crews.data = () => {
     const ghApi = new GithubUrl({owner: OWNER, repo: 'organisations' })
     const html = []

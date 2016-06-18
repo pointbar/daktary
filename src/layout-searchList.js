@@ -3,7 +3,7 @@
  *
  */
 {
-  layout.create('searchList')
+  layout.searchList = new Layout('searchList')
   layout.searchList.html(`
   <header class="container">
     <h1><a href="">multi<span>BàO</span></a></h1>
@@ -11,12 +11,14 @@
     </div>
   </header>
   <main class="container">
+    <!--
     <section class="search-result search-result-blank">
     il n'y a pas de résultat pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>
     </section>
     <section class="search-result">
       <span>3</span> résultat(s) pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>
     </section>
+    -->
     <section id="gh-list" class="gh-list" data-template="searchList">
     </section>
   </main>`)
