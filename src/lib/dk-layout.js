@@ -1,4 +1,4 @@
-class Lyt {
+class Layout {
   constructor() {
     this._htmlTpl = ''
   }
@@ -22,9 +22,4 @@ class Lyt {
       }
       return template[tplName].render()
     })}
-}
-class Layout {
-  create(name) {
-    this[name] = new Lyt()
-  }
 }
