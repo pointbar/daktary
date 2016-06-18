@@ -1,6 +1,5 @@
 {
-  template.create('search')
-
+  template.search = new Template('search')
   template.search.data = () => {
     template.search.html(`
       <div class="search-engine">

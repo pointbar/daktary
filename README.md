@@ -46,8 +46,7 @@ $ cd daktary
 ## Serveur local
 C'est optionnel, mais les exemples qui suivent sont testés sur un serveur local.
 
-Par exemple :
-https://github.com/indexzero/http-server
+> https://github.com/indexzero/http-server
 
 ```bash
 $ http-server -p 8000
@@ -57,6 +56,12 @@ $ http-server -p 8000
 Dans un [Firefox](https://www.mozilla.org/fr/firefox/developer/) **récent** lancer :
 http://127.0.0.1:8000/tests
 
+## Pour minifier et transpiler
+```bash
+$ npm install
+$ npm run build
+```
+
 ## Intégration
 * Affichage fiches : typo, justified text
 
@@ -64,7 +69,6 @@ http://127.0.0.1:8000/tests
 
 ## Discussion intégration
 * Regarder GitBook
-* 
 * Affichage fiches : tooltip sur les outils ?
 * Affichage fiches : lien pied de page en gras, pourquoi ?
 * Affichage fiches : embed, abbr, cite, acronym impossible en markdown ?
@@ -77,3 +81,17 @@ http://127.0.0.1:8000/tests
 
 ## Discussion PO
 * Seul les dépôts avec README sont visibles
+
+## Credits
+Thomas Wolff : Product Owner
+Stéphane Langlois : Développement
+Erik Gardin : Intégration
+Aymeric Favre : Web Design
+Xavier Caodic : Documentation
+Louise Berrotte : Interviews, accompagnement contributeurs
+Lilian Ricaud : Affinage Backlog
+Claude Aubry : Affinage Backlog
+Vincent Ferries : Code review
+David Larlet : Code review
+David Bruant : Code review
+Vincent Agnano : Anywhere

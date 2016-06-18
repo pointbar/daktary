@@ -3,7 +3,7 @@
  *
  */
 {
-  layout.create('repos')
+  layout.repos = new Layout('repos')
   layout.repos.html(`
   <header class="container">
     <h1><a href="">multi<span>BàO</span></a></h1>

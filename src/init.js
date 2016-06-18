@@ -1,8 +1,12 @@
 window.addEventListener('hashchange', () => {
   const ghUrl = window.location.toString().split('#')[1]
-  router.go(ghUrl)
+  const anchor = document.querySelector(`a[name="${ghUrl}"]`)
+  if (anchor) {
+    anchor.scrollIntoView()
+  } else {
+    router.go(ghUrl)
+  }
 })
-
 window.addEventListener('load', () => {
   const ghUrl = window.location.toString().split('#')[1]
   router.go(ghUrl)
@@ -11,5 +15,5 @@ window.addEventListener('load', () => {
     window.location.reload(true)
   }
 })
-const template = new Template()
-const layout = new Layout()
+const template = {}
+const layout = {}

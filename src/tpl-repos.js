@@ -24,8 +24,7 @@
       <h2 class="gh-list-title"><a href="#${url}">${title}</a></h2>
     </article>`
 
-  template.create('repos')
-
+  template.repos = new Template('repos')
   template.repos.data = () => {
     const ghApi = new GithubUrl(router.params)
     const html = []

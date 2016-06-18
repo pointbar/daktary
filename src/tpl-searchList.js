@@ -19,7 +19,7 @@
         <h2 class="gh-list-title"><a href="#${url}">${title}</a></h2>
      </article>`
 
-  template.create('searchList')
+  template.searchList = new Template('searchList')
   template.searchList.data = () => {
     const [req, query, user] = router.queries.q
       .match(/(.*)\+language:Markdown\+user:([0-9A-Za-z\u00C0-\u017F\-\_\.]*)/)

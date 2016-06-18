@@ -1,5 +1,5 @@
 {
-  layout.create('home')
+  layout.home = new Layout('home')
   layout.home.html(`
   <header class="home-header clearfix container">
     <h1>multi<span>BàO</span></h1>
