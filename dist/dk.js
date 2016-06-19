@@ -431,9 +431,6 @@ var Router = function () {
       this.url = url || '/';
       this._findAndSetCurrentRoute();
       this.injectLayout();
-      if (this.currentRoute !== 'home') {
-        window.location = '#' + url;
-      }
     }
   }, {
     key: 'route',
@@ -531,8 +528,8 @@ var Template = function () {
 }();
 'use strict';
 
-var GH_SECRET = 'M2NmYjI1YmNlOWE4MGFjN2E2NzIxZTg5YzkwMGVhZjM5NzEwN2Y2MA==';
-var GH_ID = 'NGEzOWM4YzE4NjA3NDkxNWU1NDY=';
+var GH_SECRET = 'YWU0ZmRkZGFjOTVlZGM1ZTc1MmI3NjRjZTI3Y2UxZGYyMzdmZTdkZg==';
+var GH_ID = 'ODUzMjY1YjA5YjBjMjVlOTg2MTQ=';
 
 var OWNER = 'multibao';
 'use strict';
@@ -542,8 +539,12 @@ window.addEventListener('hashchange', function () {
   var anchor = document.querySelector('a[name="' + ghUrl + '"]');
   if (anchor) {
     anchor.scrollIntoView();
+    window.location = '#' + router.url;
   } else {
     router.go(ghUrl);
+    if (undefined.currentRoute !== 'home') {
+      window.location = '#' + ghUrl;
+    }
   }
 });
 window.addEventListener('load', function () {
@@ -570,7 +571,7 @@ var layout = {};
 
 {
   layout.home = new Layout('home');
-  layout.home.html('\n  <header class="home-header clearfix container">\n    <h1>multi<span>BàO</span></h1>\n  </header>\n  <main>\n    <section class="home-intro">\n        <div class="home-intro-content container">\n          <h2>Partager en équipe et au monde <span>ses apprentissages sur le faire ensemble</span></h2>\n          <a href="#multibao/contributions/blob/master/pages/commencer_ici.md">Commencer ici</a>\n          <a href="#multibao/documentation/blob/master/README.md">Guide d\'utilisation</a>\n        </div>\n    </section>\n    <section id="gh-crew-list" class="container">\n      <ul data-template="crews">\n      </ul>\n    </section>\n  </main>');
+  layout.home.html('\n  <header class="home-header clearfix container">\n    <h1>multi<span>BàO</span></h1>\n  </header>\n  <main>\n    <section class="home-intro">\n        <div class="home-intro-content container">\n          <h2>S\'inspirer des autres cultures<span>Rédiger et partager vos expériences</span></h2>\n          <a href="#multibao/contributions/blob/master/pages/commencer_ici.md">Commencer ici</a>\n          <a href="#multibao/documentation/blob/master/README.md">Guide d\'utilisation</a>\n        </div>\n    </section>\n    <section id="gh-crew-list" class="container">\n      <ul data-template="crews">\n      </ul>\n    </section>\n  </main>');
 }
 'use strict';
 
