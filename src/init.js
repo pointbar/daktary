@@ -3,8 +3,12 @@ window.addEventListener('hashchange', () => {
   const anchor = document.querySelector(`a[name="${ghUrl}"]`)
   if (anchor) {
     anchor.scrollIntoView()
+    window.location = `#${router.url}`
   } else {
     router.go(ghUrl)
+    if (this.currentRoute !== 'home') {
+      window.location = `#${ghUrl}`
+    }
   }
 })
 window.addEventListener('load', () => {
