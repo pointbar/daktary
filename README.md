@@ -69,7 +69,11 @@ David Larlet : Code review
 David Bruant : Code review
 Vincent Agnano : Anywhere
 
-## À prévoir
+## Suivi des tâches de développement web 
+
+## A creuser
+
+### À prévoir
 * Classement par le titre
 * Merge contribution et breadcrumb parent repo
 * Version simplifiée pour les non métas
@@ -95,7 +99,7 @@ Vincent Agnano : Anywhere
 * Doc de développement
 * Se passer de Prose.io
 
-## Discussion intégration
+### Discussion intégration
 * Regarder GitBook
 * Affichage fiches : tooltip sur les outils ?
 * Affichage fiches : lien pied de page en gras, pourquoi ?
