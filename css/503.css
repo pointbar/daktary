@@ -7,7 +7,7 @@
   text-align: center;
   margin: 0px auto;
   margin-top: 5rem;
-  max-width: 620px !important;
+  max-width: 620px;
 }
 #error-503 h1,
 #error-503 h2 {
