@@ -69,7 +69,16 @@ David Larlet : Code review
 David Bruant : Code review
 Vincent Agnano : Anywhere
 
+<<<<<<< HEAD
 ## À prévoir
+=======
+## Suivi des tâches de développement web 
+
+## A creuser
+
+### À prévoir
+* Classement par le titre
+>>>>>>> 1c2c523c6e0991f3b5dac2d655950daf03571c58
 * Merge contribution et breadcrumb parent repo
 * Link absolute/relatif
 * recherche en home
@@ -77,6 +86,6 @@ Vincent Agnano : Anywhere
 * Simplify tests writes merge on async
 * Doc de développement
 
-## Discussion intégration
+### Discussion intégration
 * Regarder GitBook
 * Affichage fiches : [exemple des balises HTML](http://dev.multibao.org/#newick/grill/blob/master/styleguide.md)
