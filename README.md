@@ -69,16 +69,12 @@ David Larlet : Code review
 David Bruant : Code review
 Vincent Agnano : Anywhere
 
-<<<<<<< HEAD
-## À prévoir
-=======
-## Suivi des tâches de développement web 
+## Suivi des tâches de développement web
 
 ## A creuser
 
 ### À prévoir
 * Classement par le titre
->>>>>>> 1c2c523c6e0991f3b5dac2d655950daf03571c58
 * Merge contribution et breadcrumb parent repo
 * Link absolute/relatif
 * recherche en home
