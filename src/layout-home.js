@@ -1,9 +1,6 @@
 {
   layout.home = new Layout('home')
   layout.home.html(`
-  <header class="home-header clearfix container">
-    <h1>multi<span>BàO</span></h1>
-  </header>
   <main>
     <section class="home-intro">
         <div class="home-intro-content container">
