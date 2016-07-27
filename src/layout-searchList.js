@@ -5,7 +5,6 @@
 {
   layout.searchList = new Layout('searchList')
   layout.searchList.html(`
-  <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search"></div>
   <main class="container">
     <!--
     <section class="search-result search-result-blank">

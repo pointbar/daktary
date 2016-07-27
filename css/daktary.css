@@ -52,10 +52,24 @@ header {
   margin-bottom: 30px;
   border-bottom: 1px solid #000;
 }
+
+/*header with search engine*/
 header h1,
-header .search-engine-wrapper {
+header .search-engine {
   display: table-cell;
 }
-header .search-engine-wrapper {
+header .search-engine {
   width: 50%;
+}
+header .search-engine input[type="text"] {
+  padding: 5px;
+  width: calc(100% - 105px);
+}
+header .search-engine input[type="submit"] {
+  padding: 5px;
+  color: #fff;
+  font-size: 0.8rem;
+  background-color: #29abe2;
+  border: none;
+  cursor: pointer;
 }

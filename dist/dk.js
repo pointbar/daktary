@@ -530,8 +530,11 @@ var Template = (function () {
 var GH_SECRET = 'YWU0ZmRkZGFjOTVlZGM1ZTc1MmI3NjRjZTI3Y2UxZGYyMzdmZTdkZg==';
 var GH_ID = 'ODUzMjY1YjA5YjBjMjVlOTg2MTQ=';
 
-var OWNER = 'daktary-team';
+var OWNER = 'multibao';
 'use strict';
+
+var template = {};
+var layout = {};
 
 window.addEventListener('hashchange', function () {
   var ghUrl = window.location.toString().split('#')[1];
@@ -553,9 +556,21 @@ window.addEventListener('load', function () {
     window.location = './404.html';
     window.location.reload(true);
   }
+  document.querySelector('#button-gh-search').addEventListener('click', function (evt) {
+    if (document.querySelector('#gh-search').value.length > 2) {
+      var userQuery = document.querySelector('#gh-search').value;
+      var apiUrl = new GithubUrl(router.params).toGhApiSearch(userQuery);
+      router.go(apiUrl.replace('https://api.github.com/', ''));
+    }
+  });
+  document.querySelector('#gh-search').addEventListener('keypress', function (evt) {
+    if (evt.key === 'Enter' && evt.target.value.length > 2) {
+      var userQuery = evt.target.value;
+      var apiUrl = new GithubUrl(router.params).toGhApiSearch(userQuery);
+      router.go(apiUrl.replace('https://api.github.com/', ''));
+    }
+  });
 });
-var template = {};
-var layout = {};
 /**
  * Layout for manage and display Github repositories.
  *
@@ -564,7 +579,7 @@ var layout = {};
 
 {
   layout.folders = new Layout('folders');
-  layout.folders.html('\n  <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search"></div>\n  <main class="container">\n    <div id="breadcrumb" class="breadcrumb" data-template="breadcrumb">\n    </div>\n    <section id="gh-list" class="gh-list" data-template="folders">\n    </section>\n  </main>');
+  layout.folders.html('\n  <main class="container">\n    <div id="breadcrumb" class="breadcrumb" data-template="breadcrumb">\n    </div>\n    <section id="gh-list" class="gh-list" data-template="folders">\n    </section>\n  </main>');
 }
 'use strict';
 
@@ -580,7 +595,7 @@ var layout = {};
 
 {
   layout.repos = new Layout('repos');
-  layout.repos.html('\n  <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search"></div>\n  <main class="container">\n    <div id="breadcrumb" class="breadcrumb" data-template="breadcrumb">\n    </div>\n    <section id="gh-list" class="gh-list" data-template="repos">\n    </section>\n  </main>');
+  layout.repos.html('\n  <main class="container">\n    <div id="breadcrumb" class="breadcrumb" data-template="breadcrumb">\n    </div>\n    <section id="gh-list" class="gh-list" data-template="repos">\n    </section>\n  </main>');
 }
 /**
  * Layout for manage and display Github repositories.
@@ -590,7 +605,7 @@ var layout = {};
 
 {
   layout.searchList = new Layout('searchList');
-  layout.searchList.html('\n  <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search"></div>\n  <main class="container">\n    <!--\n    <section class="search-result search-result-blank">\n    il n\'y a pas de résultat pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    <section class="search-result">\n      <span>3</span> résultat(s) pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    -->\n    <section id="gh-list" class="gh-list" data-template="searchList">\n    </section>\n  </main>');
+  layout.searchList.html('\n  <main class="container">\n    <!--\n    <section class="search-result search-result-blank">\n    il n\'y a pas de résultat pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    <section class="search-result">\n      <span>3</span> résultat(s) pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    -->\n    <section id="gh-list" class="gh-list" data-template="searchList">\n    </section>\n  </main>');
 }
 /**
 * Layout for manage and display Github contribution.
@@ -929,30 +944,6 @@ router.route(':owner', function () {
       });
     };
   })();
-}
-'use strict';
-
-{
-  template.search = new Template('search');
-  template.search.data = function () {
-    template.search.html('\n      <div class="search-engine">\n        <fieldset>\n          <input id="gh-search" type="text" placeholder="Recherche">\n          <input id="button-gh-search" value="Rechercher" type="submit">\n        </fieldset>\n      </div>\n    ');
-    template.search.events({
-      'click #button-gh-search': function clickButtonGhSearch() {
-        if (document.querySelector('#gh-search').value.length > 2) {
-          var userQuery = document.querySelector('#gh-search').value;
-          var apiUrl = new GithubUrl(router.params).toGhApiSearch(userQuery);
-          router.go(apiUrl.replace('https://api.github.com/', ''));
-        }
-      },
-      'keypress #gh-search': function keypressGhSearch(evt) {
-        if (evt.key === 'Enter' && evt.target.value.length > 2) {
-          var userQuery = evt.target.value;
-          var apiUrl = new GithubUrl(router.params).toGhApiSearch(userQuery);
-          router.go(apiUrl.replace('https://api.github.com/', ''));
-        }
-      }
-    });
-  };
 }
 'use strict';
 
