@@ -1,17 +1,16 @@
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 /**
    * An object to manage Github url.
    *
    * @param {String} An HTML string reprsenting a github Url.
    *
    */
+'use strict';
 
-var GithubUrl = function () {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var GithubUrl = (function () {
   function GithubUrl(_ref) {
     var owner = _ref.owner;
     var repo = _ref.repo;
@@ -94,7 +93,7 @@ var GithubUrl = function () {
       var branch = _ghData3.branch;
       var path = _ghData3.path;
 
-      return 'http://prose.io/#' + owner + '/' + repo + '/edit/' + branch + path;
+      return 'http://prose.io/#' + owner + '/' + repo + '/edit/' + branch + '' + path;
     }
   }, {
     key: 'getGhUrl',
@@ -105,7 +104,7 @@ var GithubUrl = function () {
       var branch = _ghData4.branch;
       var path = _ghData4.path;
 
-      return 'https://github.com/' + owner + '/' + repo + '/blob/' + branch + path;
+      return 'https://github.com/' + owner + '/' + repo + '/blob/' + branch + '' + path;
     }
   }, {
     key: 'getHtmlBlob',
@@ -175,14 +174,14 @@ var GithubUrl = function () {
   }]);
 
   return GithubUrl;
-}();
+})();
 'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var Layout = function () {
+var Layout = (function () {
   function Layout() {
     _classCallCheck(this, Layout);
 
@@ -220,16 +219,16 @@ var Layout = function () {
   }]);
 
   return Layout;
-}();
+})();
 'use strict';
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var Markdown = function () {
+var Markdown = (function () {
   function Markdown(content) {
     _classCallCheck(this, Markdown);
 
@@ -265,34 +264,28 @@ var Markdown = function () {
         if (elt.match(/^  - [\s\S]*?$/)) {
           var _elt$match3 = elt.match(/^  - ([\s\S]*?)$/);
 
-          var _elt$match4 = _slicedToArray(_elt$match3, 2);
+          var _elt$match32 = _slicedToArray(_elt$match3, 2);
 
-          var content = _elt$match4[1];
+          var content = _elt$match32[1];
 
           _this.metas[labelList].push(content);
         }
         if (elt.match(/^\w+: [\s\S]*?$/)) {
-          var _elt$match5 = elt.match(/^(\w+): ([\s\S]*?)$/);
+          var _elt$match4 = elt.match(/^(\w+): ([\s\S]*?)$/);
 
-          var _elt$match6 = _slicedToArray(_elt$match5, 3);
+          var _elt$match42 = _slicedToArray(_elt$match4, 3);
 
-          var _label = _elt$match6[1];
-          var _content = _elt$match6[2];
+          var label = _elt$match42[1];
+          var content = _elt$match42[2];
 
-          _this.metas[_label] = _content.trim();
+          _this.metas[label] = content.trim();
         }
       });
     }
   }]);
 
   return Markdown;
-}();
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
+})();
 /**
    * A Router to manage client side url.
    *
@@ -300,8 +293,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
    * and queries option Url.
    *
    */
+'use strict';
 
-var Router = function () {
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var Router = (function () {
   function Router() {
     _classCallCheck(this, Router);
 
@@ -364,11 +362,12 @@ var Router = function () {
         }
         var paramName = patternItem.match(/^:(\w+)/)[1];
         if (patternItem.indexOf('(.*)') !== -1) {
-          this.params[paramName] = urlValues.slice(index).join('/');
+          this.params[paramName] = urlValues.slice(index).join('/')
           // Store single value
+          ;
         } else {
-            this.params[paramName] = urlValues[index];
-          }
+          this.params[paramName] = urlValues[index];
+        }
       }
     }
   }, {
@@ -393,7 +392,7 @@ var Router = function () {
           // Capture a fixed parameter
           regex.push(patternItem);
         }
-        regex.push('\/');
+        regex.push('/');
       });
       regex.pop();
       regex.push('$');
@@ -443,16 +442,16 @@ var Router = function () {
   }]);
 
   return Router;
-}();
+})();
 'use strict';
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var Template = function () {
+var Template = (function () {
   function Template(name) {
     _classCallCheck(this, Template);
 
@@ -476,22 +475,22 @@ var Template = function () {
     value: function _renderEvents(clone) {
       var _this = this;
 
-      var _loop = function _loop(event) {
-        var _event$split = event.split(' ');
+      var _loop = function (_event) {
+        var _event$split = _event.split(' ');
 
         var _event$split2 = _slicedToArray(_event$split, 2);
 
         var evtType = _event$split2[0];
         var evtSelector = _event$split2[1];
 
-        var func = _this._events[event];
+        var func = _this._events[_event];
         clone.querySelector(evtSelector).addEventListener(evtType, function (evt) {
           return func(evt);
         });
       };
 
-      for (var event in this._events) {
-        _loop(event);
+      for (var _event in this._events) {
+        _loop(_event);
       }
       return clone;
     }
@@ -525,7 +524,7 @@ var Template = function () {
   }]);
 
   return Template;
-}();
+})();
 'use strict';
 
 var GH_SECRET = 'YWU0ZmRkZGFjOTVlZGM1ZTc1MmI3NjRjZTI3Y2UxZGYyMzdmZTdkZg==';
@@ -557,55 +556,55 @@ window.addEventListener('load', function () {
 });
 var template = {};
 var layout = {};
-'use strict';
-
 /**
  * Layout for manage and display Github repositories.
  *
  */
+'use strict';
+
 {
   layout.folders = new Layout('folders');
-  layout.folders.html('\n  <header class="container">\n    <h1><a href="">multi<span>BàO</span></a></h1>\n    <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search">\n    </div>\n  </header>\n  <main class="container">\n    <div id="breadcrumb" class="breadcrumb" data-template="breadcrumb">\n    </div>\n    <section id="gh-list" class="gh-list" data-template="folders">\n    </section>\n  </main>');
+  layout.folders.html('\n  <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search"></div>\n  <main class="container">\n    <div id="breadcrumb" class="breadcrumb" data-template="breadcrumb">\n    </div>\n    <section id="gh-list" class="gh-list" data-template="folders">\n    </section>\n  </main>');
 }
 'use strict';
 
 {
   layout.home = new Layout('home');
-  layout.home.html('\n  <header class="home-header clearfix container">\n    <h1>multi<span>BàO</span></h1>\n  </header>\n  <main>\n    <section class="home-intro">\n        <div class="home-intro-content container">\n          <h2>S\'inspirer des autres cultures<span>Rédiger et partager vos expériences</span></h2>\n          <a href="#multibao/contributions/blob/master/pages/commencer_ici.md">Commencer ici</a>\n          <a href="#multibao/documentation/blob/master/README.md">Guide d\'utilisation</a>\n        </div>\n    </section>\n    <section id="gh-crew-list" class="container">\n      <ul data-template="crews">\n      </ul>\n    </section>\n  </main>');
+  layout.home.html('\n  <main>\n    <section class="home-intro">\n        <div class="home-intro-content container">\n          <h2>S\'inspirer des autres cultures<span>Rédiger et partager vos expériences</span></h2>\n          <a href="#multibao/contributions/blob/master/pages/commencer_ici.md">Commencer ici</a>\n          <a href="#multibao/documentation/blob/master/README.md">Guide d\'utilisation</a>\n        </div>\n    </section>\n    <section id="gh-crew-list" class="container">\n      <ul data-template="crews">\n      </ul>\n    </section>\n  </main>');
 }
-'use strict';
-
 /**
  * Layout for manage and display Github repositories.
  *
  */
+'use strict';
+
 {
   layout.repos = new Layout('repos');
-  layout.repos.html('\n  <header class="container">\n    <h1><a href="">multi<span>BàO</span></a></h1>\n    <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search">\n    </div>\n  </header>\n  <main class="container">\n    <div id="breadcrumb" class="breadcrumb" data-template="breadcrumb">\n    </div>\n    <section id="gh-list" class="gh-list" data-template="repos">\n    </section>\n  </main>');
+  layout.repos.html('\n  <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search"></div>\n  <main class="container">\n    <div id="breadcrumb" class="breadcrumb" data-template="breadcrumb">\n    </div>\n    <section id="gh-list" class="gh-list" data-template="repos">\n    </section>\n  </main>');
 }
-'use strict';
-
 /**
  * Layout for manage and display Github repositories.
  *
  */
-{
-  layout.searchList = new Layout('searchList');
-  layout.searchList.html('\n  <header class="container">\n    <h1><a href="">multi<span>BàO</span></a></h1>\n    <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search">\n    </div>\n  </header>\n  <main class="container">\n    <!--\n    <section class="search-result search-result-blank">\n    il n\'y a pas de résultat pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    <section class="search-result">\n      <span>3</span> résultat(s) pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    -->\n    <section id="gh-list" class="gh-list" data-template="searchList">\n    </section>\n  </main>');
-}
 'use strict';
 
+{
+  layout.searchList = new Layout('searchList');
+  layout.searchList.html('\n  <div id="search-engine-wrapper" class="search-engine-wrapper" data-template="search"></div>\n  <main class="container">\n    <!--\n    <section class="search-result search-result-blank">\n    il n\'y a pas de résultat pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    <section class="search-result">\n      <span>3</span> résultat(s) pour la recherche <span>agilité</span> dans le repo <a href=""> Super repo de démo</a>\n    </section>\n    -->\n    <section id="gh-list" class="gh-list" data-template="searchList">\n    </section>\n  </main>');
+}
 /**
 * Layout for manage and display Github contribution.
 *
 */
+'use strict';
+
 {
   layout.viewer = new Layout('viewer');
   layout.viewer.html('\n    <main data-template="contribution" class="container">\n    </main>\n  ');
 }
+// Create a router
 'use strict';
 
-// Create a router
 var router = new Router();
 
 router.route('/', function () {
@@ -650,13 +649,13 @@ router.route(':owner', function () {
         path.split('/').map(function (elt) {
           pathByFolder.push('/' + elt);
           folders.push({
-            link: '#' + owner + '/' + repo + '/tree/' + branch + pathByFolder.join(''),
+            link: '#' + owner + '/' + repo + '/tree/' + branch + '' + pathByFolder.join(''),
             label: elt
           });
         });
       })();
     }
-    var _ownerTpl$repoTpl$fol = {
+    var _ownerTpl$repoTpl$foldersTpl = {
       ownerTpl: {
         label: owner,
         link: '#' + owner
@@ -667,10 +666,9 @@ router.route(':owner', function () {
       },
       foldersTpl: folders
     };
-    var ownerTpl = _ownerTpl$repoTpl$fol.ownerTpl;
-    var repoTpl = _ownerTpl$repoTpl$fol.repoTpl;
-    var foldersTpl = _ownerTpl$repoTpl$fol.foldersTpl;
-
+    var ownerTpl = _ownerTpl$repoTpl$foldersTpl.ownerTpl;
+    var repoTpl = _ownerTpl$repoTpl$foldersTpl.repoTpl;
+    var foldersTpl = _ownerTpl$repoTpl$foldersTpl.foldersTpl;
 
     template.breadcrumb.html('<ul>\n        <li><a href="#">Accueil</a></li>\n        <li><a href="' + ownerTpl.link + '">' + ownerTpl.label + '</a></li>\n        ' + (repoTpl.label ? '<li><a href="' + repoTpl.link + '">' + repoTpl.label + '</a></li>' : '') + foldersTpl.map(function (folder) {
       return '<li><a href="' + folder.link + '">' + folder.label + '</a></li>';
@@ -704,7 +702,7 @@ router.route(':owner', function () {
           prose_url: ghApi.getProseUrl(),
           content: htmlResponse,
           link: '#' + owner + '/' + repo + '/tree/' + branch + '/' + ('' + path.replace(/(\/|)[0-9A-Za-z\u00C0-\u017F\-\_\.]*$/, '')),
-          label: owner + ' - ' + repo
+          label: '' + owner + ' - ' + repo
         };
         template.contribution.html(html(data));
         template.contribution.renderAsync();
@@ -712,14 +710,14 @@ router.route(':owner', function () {
     };
   })();
 }
-'use strict';
-
 /**
 * Add selected in current crew and return the crews list.
 *
 * @param {String} An HTML string representing a github Url contribution.
 * @result {Array} A array with each crew Object.
 */
+'use strict';
+
 {
   (function () {
     var htmlWithMetas = function htmlWithMetas(_ref) {
@@ -808,7 +806,7 @@ router.route(':owner', function () {
           var html_url = _ref5.html_url;
 
           if (type === 'file') {
-            var readmeUrl = { owner: router.params.owner, repo: router.params.repo, branch: 'master', path: '' + (router.params.path ? router.params.path + '/' + name : name) };
+            var readmeUrl = { owner: router.params.owner, repo: router.params.repo, branch: 'master', path: '' + (router.params.path ? '' + router.params.path + '/' + name : name) };
             var ghApiBlob = new GithubUrl(readmeUrl);
             ghApiBlob.getMdBlob().then(function (mdResponse) {
               var contribution = new Markdown(mdResponse);
@@ -834,9 +832,9 @@ router.route(':owner', function () {
               template.folders.renderAsync(template.folders._htmlTpl);
             });
           } else {
-            var _readmeUrl = { owner: router.params.owner, repo: name, branch: 'master', path: '' + (router.params.path ? router.params.path + '/README.md' : 'README.md') };
-            var _ghApiBlob = new GithubUrl(_readmeUrl);
-            _ghApiBlob.getMdBlob().then(function (mdResponse) {
+            var readmeUrl = { owner: router.params.owner, repo: name, branch: 'master', path: '' + (router.params.path ? '' + router.params.path + '/README.md' : 'README.md') };
+            var ghApiBlob = new GithubUrl(readmeUrl);
+            ghApiBlob.getMdBlob().then(function (mdResponse) {
               var contribution = new Markdown(mdResponse);
               if (contribution.isMetas()) {
                 var metas = {
@@ -958,7 +956,7 @@ router.route(':owner', function () {
 }
 'use strict';
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }
 
 {
   (function () {
@@ -981,13 +979,13 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
     template.searchList = new Template('searchList');
     template.searchList.data = function () {
-      var _router$queries$q$mat = router.queries.q.match(/(.*)\+language:Markdown\+user:([0-9A-Za-z\u00C0-\u017F\-\_\.]*)/);
+      var _router$queries$q$match = router.queries.q.match(/(.*)\+language:Markdown\+user:([0-9A-Za-z\u00C0-\u017F\-\_\.]*)/);
 
-      var _router$queries$q$mat2 = _slicedToArray(_router$queries$q$mat, 3);
+      var _router$queries$q$match2 = _slicedToArray(_router$queries$q$match, 3);
 
-      var req = _router$queries$q$mat2[0];
-      var query = _router$queries$q$mat2[1];
-      var user = _router$queries$q$mat2[2];
+      var req = _router$queries$q$match2[0];
+      var query = _router$queries$q$match2[1];
+      var user = _router$queries$q$match2[2];
 
       router.params.owner = user;
       var ghApi = new GithubUrl(router.params);
@@ -1007,7 +1005,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
               var metas = {
                 prose_url: ('http://prose.io/#' + html_url.match(/^https:\/\/github.com\/(.*)/)[1]).replace('blob', 'edit'),
                 git_url: html_url,
-                url: repository.full_name + '/blob/master/' + path,
+                url: '' + repository.full_name + '/blob/master/' + path,
                 description: contribution.metas.description,
                 title: contribution.metas.title,
                 authors: contribution.metas.contributors,
@@ -1017,7 +1015,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
             } else {
               var noMetas = {
                 title: name,
-                url: repository.full_name + '/blob/master/' + path
+                url: '' + repository.full_name + '/blob/master/' + path
               };
               html.push(htmlNoMetas(noMetas));
             }
