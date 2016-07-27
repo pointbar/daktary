@@ -1,8 +1,6 @@
 /*
 GENERAL
 */
-
-
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -37,7 +35,7 @@ h3 {
 }
 
 h1 {
-font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
 }
 h1 a {
   color: #4d4d4d;
@@ -50,7 +48,7 @@ h1 span {
 header {
   display: table;
   width: 100%;
-    padding: 20px 0 30px;
+  padding: 20px 0 30px;
   margin-bottom: 30px;
   border-bottom: 1px solid #000;
 }
