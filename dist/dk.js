@@ -530,7 +530,7 @@ var Template = (function () {
 var GH_SECRET = 'YWU0ZmRkZGFjOTVlZGM1ZTc1MmI3NjRjZTI3Y2UxZGYyMzdmZTdkZg==';
 var GH_ID = 'ODUzMjY1YjA5YjBjMjVlOTg2MTQ=';
 
-var OWNER = 'multibao';
+var OWNER = 'daktary-team';
 'use strict';
 
 window.addEventListener('hashchange', function () {
