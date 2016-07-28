@@ -8,39 +8,6 @@ GENERAL
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/*Open Sans Regular*/
-@font-face {
-  font-family: 'OpenSans';
-  src:  url('../fonts/OpenSans-Regular.woff2') format('woff2'),
-    url('../fonts/OpenSans-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-/* END Open Sans Regular*/
-/*Open Sans Bold*/
-@font-face {
-  font-family: 'OpenSans';
-  src:  url('../fonts/OpenSans-Bold.woff2') format('woff2'),
-    url('../fonts/OpenSans-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-/* END Open Sans Bold*/
-/*Open Sans Regular Italic*/
-@font-face {
-  font-family: 'OpenSans';
-  src:  url('../fonts/OpenSans-Italic.woff2') format('woff2'),
-    url('../fonts/OpenSans-Italic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'OpenSansBoldItalic';
-  src:  url('../fonts/OpenSans-BoldItalic.woff2') format('woff2'),
-    url('../fonts/OpenSans-BoldItalic.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
-}
 
 body {
   font-family: "OpenSans", Arial, sans-serif;
