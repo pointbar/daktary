@@ -539,6 +539,7 @@ var layout = {};
 window.addEventListener('hashchange', function () {
   var ghUrl = window.location.toString().split('#')[1];
   var anchor = document.querySelector('a[name="' + ghUrl + '"]');
+  document.querySelector('.search-engine').style.display = '';
   if (anchor) {
     anchor.scrollIntoView();
     window.location = '#' + router.url;
@@ -701,7 +702,7 @@ router.route(':owner', function () {
       var content = _ref.content;
       var prose_url = _ref.prose_url;
       var git_url = _ref.git_url;
-      return '\n    <a name="top"></a>\n    <aside class="contribution-tools">\n      <a href="' + git_url + '" class="github-link">Voir sur Github</a>\n      <a href="' + prose_url + '" class="proseio-link">Editer sur prose.io</a>\n      <a href="#multibao/documentation/blob/master/README.md" class="help-link">Aide</a>\n      <a href="#top" class="page-top">Haut de page</a>\n    </aside>\n    <div id="parentRepo" class="breadcrumbs">\n      À retrouver dans le dépôt : <a href="' + link + '">' + label + '</a>\n    </div>\n    <article id="contribution">\n      ' + content + '\n    </article>\n  ';
+      return '\n    <a name="top"></a>\n    <aside class="contribution-tools">\n      <a href="' + git_url + '" data-tootik="Voir sur Github" class="github-link"></a>\n      <a href="' + prose_url + '" data-tootik="Editer sur prose.io" class="proseio-link"></a>\n      <a href="#multibao/documentation/blob/master/README.md" data-tootik="Aide" class="help-link"></a>\n      <a href="#top" class="page-top">Haut de page</a>\n    </aside>\n    <div id="parentRepo" class="breadcrumbs">\n      À retrouver dans le dépôt : <a href="' + link + '">' + label + '</a>\n    </div>\n    <article id="contribution">\n      ' + content + '\n    </article>\n  ';
     };
     template.contribution = new Template('contribution');
     template.contribution.data = function () {

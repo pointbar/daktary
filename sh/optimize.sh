@@ -36,4 +36,5 @@ babel --presets es2015 \
   ./css/tpl-breadcrumb.css \
   ./css/tpl-list.css \
   ./css/tpl-folder.css \
-  ./css/tpl-searchList.css > dist/dk.min.css
+  ./css/tpl-searchList.css \
+  ./css/custom.css > dist/dk.min.css

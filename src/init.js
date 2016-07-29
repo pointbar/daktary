@@ -4,6 +4,7 @@ const layout = {}
 window.addEventListener('hashchange', () => {
   const ghUrl = window.location.toString().split('#')[1]
   const anchor = document.querySelector(`a[name="${ghUrl}"]`)
+  document.querySelector('.search-engine').style.display = ''
   if (anchor) {
     anchor.scrollIntoView()
     window.location = `#${router.url}`
