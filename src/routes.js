@@ -4,6 +4,7 @@ const router = new Router()
 router.route('/', function () {
   this.currentRoute = 'home'
   layout.home.render()
+  document.querySelector('.search-engine').style.display = 'none'
 })
 router.route('search/code', function () {
   this.currentRoute = 'search'

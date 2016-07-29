@@ -20,7 +20,6 @@ babel --presets es2015 \
   ./src/tpl-crews.js \
   ./src/tpl-folders.js \
   ./src/tpl-repos.js \
-  ./src/tpl-search.js \
   ./src/tpl-searchList.js > dist/dk.js
 
 # Minify js files
@@ -34,8 +33,8 @@ babel --presets es2015 \
   ./css/layout-repositories.css \
   ./css/tpl-contribution.css \
   ./css/tpl-crews.css \
-  ./css/tpl-search.css \
   ./css/tpl-breadcrumb.css \
   ./css/tpl-list.css \
   ./css/tpl-folder.css \
-  ./css/tpl-searchList.css > dist/dk.min.css
+  ./css/tpl-searchList.css \
+  ./css/custom.css > dist/dk.min.css

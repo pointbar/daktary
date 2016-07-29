@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/tpl-list.css">
     <link rel="stylesheet" href="./css/tpl-folder.css">
     <link rel="stylesheet" href="./css/tpl-searchList.css">
+    <link rel="stylesheet" href="./css/custom.css">
     <script src="./src/config.js"></script>
     <script src="./src/lib/dk-githubUrl.js"></script>
     <script src="./src/lib/dk-router.js"></script>
@@ -38,7 +39,12 @@
   <body>
     <header class="container">
       <h1><a href="">multi<span>BàO</span></a></h1>
-      <div></div>
+      <div class="search-engine">
+        <fieldset>
+          <input id="gh-search" type="text" placeholder="Recherche">
+          <input id="button-gh-search" value="Rechercher" type="submit">
+        </fieldset>
+      </div>
     </header>
     <div id="container">
     </div>
