@@ -21,8 +21,8 @@ var GithubUrl = (function () {
 
     this.ghData = {
       keys: {
-        secret: atob(GH_SECRET),
-        id: atob(GH_ID)
+        secret: atob(GH.SECRET),
+        id: atob(GH.ID)
       },
       owner: owner,
       repo: repo,
@@ -527,12 +527,6 @@ var Template = (function () {
 })();
 'use strict';
 
-var GH_SECRET = 'YWU0ZmRkZGFjOTVlZGM1ZTc1MmI3NjRjZTI3Y2UxZGYyMzdmZTdkZg==';
-var GH_ID = 'ODUzMjY1YjA5YjBjMjVlOTg2MTQ=';
-
-var OWNER = 'multibao';
-'use strict';
-
 var template = {};
 var layout = {};
 
@@ -586,7 +580,7 @@ window.addEventListener('load', function () {
 
 {
   layout.home = new Layout('home');
-  layout.home.html('\n  <main>\n    <section class="home-intro">\n        <div class="home-intro-content container">\n          <h2>S\'inspirer des autres cultures<span>Rédiger et partager vos expériences</span></h2>\n          <a href="#multibao/contributions/blob/master/pages/commencer_ici.md">Commencer ici</a>\n          <a href="#multibao/documentation/blob/master/README.md">Guide d\'utilisation</a>\n        </div>\n    </section>\n    <section id="gh-crew-list" class="container">\n      <ul data-template="crews">\n      </ul>\n    </section>\n  </main>');
+  layout.home.html('\n  <main>\n    <section class="home-intro">\n        <div class="home-intro-content container">\n          <h2>' + MULTIBAO.UVP1 + '<span>' + MULTIBAO.UVP2 + '</span></h2>\n          <a href="#multibao/contributions/blob/master/pages/commencer_ici.md">' + MULTIBAO.BUTTON1 + '</a>\n          <a href="#multibao/documentation/blob/master/README.md">' + MULTIBAO.BUTTON2 + '</a>\n        </div>\n    </section>\n    <section id="gh-crew-list" class="container">\n      <ul data-template="crews">\n      </ul>\n    </section>\n  </main>');
 }
 /**
  * Layout for manage and display Github repositories.
@@ -747,14 +741,14 @@ router.route(':owner', function () {
 
     template.crews = new Template('crews');
     template.crews.data = function () {
-      var ghApi = new GithubUrl({ owner: OWNER, repo: 'organisations' });
+      var ghApi = new GithubUrl({ owner: GH.OWNER, repo: GH.CREW });
       var html = [];
       ghApi.getJsonFolders().then(function (jsonResponse) {
         jsonResponse.map(function (elt) {
           if (elt.name === 'README.md') {
             return;
           }
-          var readmeUrl = { owner: OWNER, repo: 'organisations', branch: 'master', path: elt.name };
+          var readmeUrl = { owner: GH.OWNER, repo: GH.CREW, branch: 'master', path: elt.name };
           var ghApiBlob = new GithubUrl(readmeUrl);
           ghApiBlob.getMdBlob().then(function (mdResponse) {
             var contribution = new Markdown(mdResponse);

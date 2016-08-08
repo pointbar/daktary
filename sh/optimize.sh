@@ -7,7 +7,6 @@ babel --presets es2015 \
   ./src/lib/dk-markdown.js \
   ./src/lib/dk-router.js \
   ./src/lib/dk-template.js \
-  ./src/config.js \
   ./src/init.js \
   ./src/layout-folders.js \
   ./src/layout-home.js \
