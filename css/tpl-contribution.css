@@ -1,10 +1,6 @@
 /*
 CONTRIBUTIONS
 */
-header {
-  display: none;
-}
-
 .contribution-tools {
   position: fixed;
   height: 100vh;
