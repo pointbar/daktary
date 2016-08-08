@@ -629,6 +629,7 @@ router.route('search/code', function () {
 router.route(':owner/:repo/blob/:branch/:path(.*)', function () {
   this.currentRoute = 'blob';
   layout.viewer.render();
+  document.querySelector('header').style.display = 'none';
 });
 router.route(':owner/:repo/tree/:branch/:path(.*)?', function () {
   this.currentRoute = 'tree';

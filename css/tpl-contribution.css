@@ -1,10 +1,6 @@
 /*
 CONTRIBUTIONS
 */
-header {
-  display: none;
-}
-
 .contribution-tools {
   position: fixed;
   height: 100vh;
@@ -195,14 +191,14 @@ header {
   position: relative;
   margin-bottom: 5px;
   padding-left: 20px;
-  list-style-type: none;  
+  list-style-type: none;
 }
 #contribution li:before {
   content: '>';
   position: absolute;
   left: 0;
   top: 0;
-  font-weight: bold;  
+  font-weight: bold;
 }
 
 #contribution ol {
