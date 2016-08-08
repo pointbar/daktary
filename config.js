@@ -1,3 +1,5 @@
+/* eslint-disable */
+"use strict"
 var GH = {}
 // Github token to bypass github limitation
 GH.SECRET = 'YWU0ZmRkZGFjOTVlZGM1ZTc1MmI3NjRjZTI3Y2UxZGYyMzdmZTdkZg=='

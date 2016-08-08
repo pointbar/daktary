@@ -1,6 +1,9 @@
 /*
 CONTRIBUTIONS
 */
+header {
+  display: none;
+}
 
 .contribution-tools {
   position: fixed;
@@ -11,7 +14,7 @@ CONTRIBUTIONS
 }
 .contribution-tools a {
   display: block;
-/*  text-indent: -9999px;*/
+  text-indent: -9999px;
   opacity: .3;
   transition: opacity 0.3s;
 }
