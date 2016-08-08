@@ -12,7 +12,7 @@
 
   template.crews = new Template('crews')
   template.crews.data = () => {
-    const ghApi = new GithubUrl({owner: OWNER, repo: 'organisations' })
+    const ghApi = new GithubUrl({owner: GH.OWNER, repo: GH.CREW })
     const html = []
     ghApi.getJsonFolders()
       .then(jsonResponse => {
@@ -20,7 +20,7 @@
           if (elt.name === 'README.md') {
             return
           }
-          const readmeUrl = {owner: OWNER, repo: 'organisations', branch: 'master', path: elt.name}
+          const readmeUrl = {owner: GH.OWNER, repo: GH.CREW, branch: 'master', path: elt.name}
           const ghApiBlob = new GithubUrl(readmeUrl)
           ghApiBlob.getMdBlob()
             .then(mdResponse => {

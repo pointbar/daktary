@@ -8,8 +8,8 @@ class GithubUrl {
   constructor({owner, repo, branch, path}) {
     this.ghData = {
       keys: {
-        secret: atob(GH_SECRET),
-        id: atob(GH_ID )
+        secret: atob(GH.SECRET),
+        id: atob(GH.ID )
       },
       owner: owner,
       repo: repo,
