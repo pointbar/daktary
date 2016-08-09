@@ -10,7 +10,7 @@ GH.OWNER = 'multibao'
 GH.CREW = 'organisations'
 
 var MULTIBAO = {}
-MULTIBAO.UVP1 = 'S\'inspirer des autres cultures'
-MULTIBAO.UVP2 = 'Rédiger et partager vos expériences'
+MULTIBAO.UVP1 = 'L\'open bar des pratiques collaboratives'
+MULTIBAO.UVP2 = 'Rédiger et partager vos fiches expérience'
 MULTIBAO.BUTTON1 = 'Commencer ici'
 MULTIBAO.BUTTON2 = 'Guide d\'utilisation'
