@@ -10,7 +10,7 @@ GH.OWNER = 'multibao'
 GH.CREW = 'organisations'
 
 var MULTIBAO = {}
-MULTIBAO.UVP1 = 'S\'inspirer des autres cultures'
+MULTIBAO.UVP1 = 'Apprendre avec de la junk data'
 MULTIBAO.UVP2 = 'Rédiger et partager vos expériences'
 MULTIBAO.BUTTON1 = 'Commencer ici'
 MULTIBAO.BUTTON2 = 'Guide d\'utilisation'
