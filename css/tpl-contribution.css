@@ -145,6 +145,7 @@ CONTRIBUTIONS
   text-align: justify;
   letter-spacing: 0.01rem;
   color: rgba(0,0,0,0.7);
+  font-size: 25px;
 }
 #contribution h1 {
   font-size: 2.25rem;
@@ -287,3 +288,5 @@ TAGS
   margin-right: 8px;
   margin-bottom: 8px;
 }
+
+
