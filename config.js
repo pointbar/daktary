@@ -7,7 +7,7 @@ GH.ID = 'ODUzMjY1YjA5YjBjMjVlOTg2MTQ='
 // Github Owner's
 GH.OWNER = 'fuentesloic'
 // Github crew's repository
-GH.CREW = 'organisations'
+GH.CREW = 'organisation'
 
 var MULTIBAO = {}
 MULTIBAO.UVP1 = 'S\'inspirer des autres cultures'
