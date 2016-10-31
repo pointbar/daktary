@@ -202,8 +202,10 @@ CONTRIBUTIONS
 }
 
 #contribution ol {
+  padding-left: 0;
   counter-reset: section;
   list-style-type: none;
+  margin-left: 20px;
 }
 #contribution ol li:before {
   position: relative;
@@ -286,4 +288,31 @@ TAGS
   padding: 3px 10px;
   margin-right: 8px;
   margin-bottom: 8px;
+}
+
+
+@media (max-width:768px) {
+  #contribution {
+    text-align: left;
+  }
+  .contribution-tools {
+    display: none;
+  }
+  #contribution blockquote {
+    margin: 0;
+  }
+  #parentRepo a {
+    display: block;
+  }
+  #contribution ul,
+  #contribution ol {
+    margin-left: 0;
+  }
+  #contribution pre {
+    padding: 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1.188rem;
+    word-wrap: break-word;
+  }
 }
