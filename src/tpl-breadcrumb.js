@@ -1,3 +1,9 @@
+ghInfosToBreadcrumbItems = ({owner, repo, branch, path}) => {
+  const breadCrumbItems = []
+  breadCrumbItems.push({label: owner, link: ''})
+  return breadCrumbItems
+}
+
 {
   template.breadcrumb = new Template('breadcrumb')
   template.breadcrumb.data = () => {
