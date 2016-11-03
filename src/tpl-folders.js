@@ -1,12 +1,12 @@
 {
   const htmlContribWithMetas = ({url, title, authors, git_url, prose_url, image_url, description}) =>
     `<article class="gh-list-item gh-type-file">
+       <img src="${image_url}">
        <h2 class="gh-list-title"><a href="#${url}">${title}</a></h2>
        <div class="gh-list-content">
          <div class="gh-list-meta">
            <p>Mise à jour par : ${authors}</p>
          </div>
-         <img src="${image_url}">
          <p class="gh-list-excerpt">${description}</p>
          <a class="gh-list-readmore"
            title="Lire la suite de la fiche : ${title}"
@@ -21,6 +21,8 @@
 
   const htmlFolderWithMetas = ({url, title, folders, files, contributors, git_url, image_url, description}) =>
     `<article class="gh-list-item gh-type-folder">
+
+          <img src="${image_url}">
           <h2 class="gh-list-title"><a href="#${url}">${title}</a></h2>
           <div class="gh-list-content">
             <div class="gh-list-meta">
@@ -31,7 +33,6 @@
                 <a href="${git_url}">Voir sur Github</a>
               </p>
             </div>
-            <img src="${image_url}">
             <p class="gh-list-excerpt">${description}</p>
             <a class="gh-list-readmore"
                 title="Lire la suite de la fiche : ${title}"
