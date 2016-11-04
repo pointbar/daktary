@@ -2,7 +2,7 @@
 
 ## US en cours
 
-US4
+US1
 
 ## Serveurs
 Prod : http://www.multibao.org
