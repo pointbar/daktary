@@ -644,17 +644,6 @@ router.route(':owner', function () {
 });
 'use strict';
 
-ghInfosToBreadcrumbItems = function ghInfosToBreadcrumbItems(_ref) {
-  var owner = _ref.owner;
-  var repo = _ref.repo;
-  var branch = _ref.branch;
-  var path = _ref.path;
-
-  var breadCrumbItems = [];
-  breadCrumbItems.push({ label: owner, link: '' });
-  return breadCrumbItems;
-};
-
 {
   template.breadcrumb = new Template('breadcrumb');
   template.breadcrumb.data = function () {
