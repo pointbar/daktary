@@ -1,6 +1,7 @@
 {
   const htmlWithMetas = ({url, title, folders, files, contributors, git_url, image_url, description, readme_url}) =>
     `<article class="gh-list-item gh-type-repo">
+      <img src="${image_url}">
       <h2 class="gh-list-title"><a href="#${url}">${title}</a></h2>
       <div class="gh-list-content">
         <div class="gh-list-meta">
@@ -11,7 +12,6 @@
             <a href="${git_url}">Voir sur Github</a>
           </p>
         </div>
-        <img src="${image_url}">
         <p class="gh-list-excerpt">${description}</p>
         <a class="gh-list-readmore"
             title="Lire la suite de la fiche Titre de la fiche"
