@@ -1,5 +1,5 @@
 {
-  const htmlRepo = ({url, title, folders, files, contributors, git_url, image_url, description, readme_url}) =>
+  const htmlRepo = ({url, title, folders, files, contributors, github_url, image_url, description, readme_url}) =>
     `<article class="gh-list-item gh-type-repo">
       ${ image_url ? `<img src="${image_url}">` : '' }
       <h2 class="gh-list-title"><a href="#${url}">${title}</a></h2>
@@ -9,7 +9,7 @@
           ${ contributors ? `<p>Contributeurs : ${contributors}</p>` : '' }
           </p>
           <p>
-          <a href="${git_url}">Voir sur Github</a>
+          <a href="${github_url}">Voir sur Github</a>
           </p>
         </div>
         ${ description ? `<p class="gh-list-excerpt">${description}</p>` : '' }
@@ -22,19 +22,19 @@
 
   template.repos = new Template('repos')
   template.repos.data = () => {
-    const ghApi = new GithubUrl(router.params)
+    const githubApi = new GithubUrl(router.params)
     const html = []
-    ghApi.getJsonRepo().then(jsonResponse => {
+    githubApi.getJsonRepo().then(jsonResponse => {
       jsonResponse.map(({name, type, html_url, url}) => {
-       const readmeUrl = {owner: router.params.owner, repo: name, branch: 'master', path: 'README.md'}
-        const ghApiBlob = new GithubUrl(readmeUrl)
-        ghApiBlob.getMdBlob()
+        const readmeUrl = {owner: router.params.owner, repo: name, branch: 'master', path: 'README.md'}
+        const githubApiBlob = new GithubUrl(readmeUrl)
+        githubApiBlob.getMdBlob()
           .then(mdResponse => {
             const contribution = new Markdown(mdResponse)
             const metas = contribution.isMetas() ?
             {
               url: html_url.replace('https://github.com/', ''),
-              git_url: html_url,
+              github_url: html_url,
               readme_url: html_url.replace('https://github.com/', '') + '/blob/master/README.md',
               title: contribution.metas.title,
               image_url: contribution.metas.image_url,
@@ -44,7 +44,7 @@
               files: contribution.metas.files
             } : {
               url: html_url.replace('https://github.com/', ''),
-              git_url: html_url,
+              github_url: html_url,
               title: name
             }
             html.push(htmlRepo(metas))

@@ -2,22 +2,22 @@ const template = {}
 const layout = {}
 
 window.addEventListener('hashchange', () => {
-  const ghUrl = window.location.toString().split('#')[1]
-  const anchor = document.querySelector(`a[name="${ghUrl}"]`)
+  const githubUrl = window.location.toString().split('#')[1]
+  const anchor = document.querySelector(`a[name="${githubUrl}"]`)
   document.querySelector('.search-engine').style.display = ''
   if (anchor) {
     anchor.scrollIntoView()
     window.location = `#${router.url}`
   } else {
-    router.go(ghUrl)
+    router.go(githubUrl)
     if (this.currentRoute !== 'home') {
-      window.location = `#${ghUrl}`
+      window.location = `#${githubUrl}`
     }
   }
 })
 window.addEventListener('load', () => {
-  const ghUrl = window.location.toString().split('#')[1]
-  router.go(ghUrl)
+  const githubUrl = window.location.toString().split('#')[1]
+  router.go(githubUrl)
   if (router.isNoRoute()) {
     window.location = './404.html'
     window.location.reload(true)
