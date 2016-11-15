@@ -33,6 +33,6 @@ router.route(':owner/:repo', function () {
 })
 router.route(':owner', function () {
   this.currentRoute = 'repos'
-  layout.repos.render()
+  layout.repositories.render()
   document.querySelector('header').style.display = ''
 })

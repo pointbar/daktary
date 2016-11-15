@@ -1,5 +1,5 @@
 {
-  const htmlRepo = ({url, title, folders, files, contributors, github_url, image_url, description, readme_url}) =>
+  const htmlRepositories = ({url, title, folders, files, contributors, github_url, image_url, description, readme_url}) =>
     `<article class="gh-list-item gh-type-repo">
       ${ image_url ? `<img src="${image_url}">` : '' }
       <h2 class="gh-list-title"><a href="#${url}">${title}</a></h2>
@@ -20,8 +20,8 @@
       </div>
     </article>`
 
-  template.repos = new Template('repos')
-  template.repos.data = () => {
+  template.repositories = new Template('repositories')
+  template.repositories.data = () => {
     const githubApi = new GithubUrl(router.params)
     const html = []
     githubApi.getJsonRepo().then(jsonResponse => {
@@ -47,9 +47,9 @@
               github_url: html_url,
               title: name
             }
-            html.push(htmlRepo(metas))
-            template.repos.html(html.join('\n'))
-            template.repos.renderAsync(template.repos._htmlTpl)
+            html.push(htmlRepositories(metas))
+            template.repositories.html(html.join('\n'))
+            template.repositories.renderAsync(template.repositories._htmlTpl)
           })
       })
     })
