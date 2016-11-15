@@ -12,7 +12,7 @@ babel --presets es2015 \
   ./src/layout-home.js \
   ./src/layout-repositories.js \
   ./src/layout-searchList.js \
-  ./src/layout-viewer.js \
+  ./src/layout-contribution.js \
   ./src/layout-editor.js \
   ./src/routes.js \
   ./src/tpl-breadcrumb.js \
@@ -20,7 +20,7 @@ babel --presets es2015 \
   ./src/tpl-editor.js \
   ./src/tpl-crews.js \
   ./src/tpl-folders.js \
-  ./src/tpl-repos.js \
+  ./src/tpl-repositories.js \
   ./src/tpl-searchList.js > dist/dk.js
 
 # Minify js files
