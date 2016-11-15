@@ -76,6 +76,9 @@ class GithubUrl {
           .then(htmlResponse => {
             resolve(htmlResponse)
           })
+          .catch(error => {
+            console.log('fetch getHtmlBlob() : ' + error.message)
+          })
       })}
   getMdBlob() {
     return new Promise(
@@ -84,6 +87,9 @@ class GithubUrl {
           .then(response => response.text())
           .then(mdResponse => {
             resolve(mdResponse)
+          })
+          .catch(error => {
+            console.log('fetch getMdBlob() : ' + error.message)
           })
       })}
   getJsonRepo() {
@@ -94,6 +100,9 @@ class GithubUrl {
           .then(json => {
             resolve(json)
           })
+          .catch(error => {
+            console.log('fetch getJsonRepo(): ' + error.message)
+          })
       })}
   getJsonSearch(query) {
     return new Promise(
@@ -103,6 +112,9 @@ class GithubUrl {
           .then(json => {
             resolve(json)
           })
+          .catch(error => {
+            console.log('fetch getJsonSearch(): ' + error.message)
+          })
       })}
   getJsonFolders() {
     return new Promise(
@@ -111,6 +123,9 @@ class GithubUrl {
           .then(response => response.json())
           .then(json => {
             resolve(this._listByFolder(this._listMd(json)))
+          })
+          .catch(error => {
+            console.log('fetch getJsonFolders(): ' + error.message)
           })
       })}
 }
