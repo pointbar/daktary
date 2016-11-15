@@ -10,18 +10,11 @@ window.addEventListener('hashchange', () => {
     window.location = `#${router.url}`
   } else {
     router.go(githubUrl)
-    if (this.currentRoute !== 'home') {
-      window.location = `#${githubUrl}`
-    }
   }
 })
 window.addEventListener('load', () => {
   const githubUrl = window.location.toString().split('#')[1]
   router.go(githubUrl)
-  if (router.isNoRoute()) {
-    window.location = './404.html'
-    window.location.reload(true)
-  }
   document.querySelector('#button-gh-search')
     .addEventListener('click', (evt) => {
       if (document.querySelector('#gh-search').value.length > 2) {

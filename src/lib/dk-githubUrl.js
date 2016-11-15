@@ -66,7 +66,13 @@ class GithubUrl {
     return new Promise(
       (resolve, reject) => {
         fetch(this.toGithubApiUrl(), {headers: {Accept: 'application/vnd.github.v3.html'}})
-          .then(response => response.text())
+          .then(response => {
+            if (response.ok) {
+              return response.text()
+            } else {
+              router.go404()
+            }
+          })
           .then(htmlResponse => {
             resolve(htmlResponse)
           })
