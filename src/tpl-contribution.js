@@ -1,9 +1,9 @@
 {
-  const html = ({link, label, content, github_edit_url, github_url}) => `
+  const html = ({link, label, content, edit_url, github_url}) => `
     <a name="top"></a>
     <aside class="contribution-tools">
       <a href="${github_url}" title="Voir sur Github" class="github-link tooltip"></a>
-      <a href="${github_edit_url}" title="Editer sur github" class="github-edit-link tooltip"></a>
+      <a href="${edit_url}" title="Editer la contribution" class="edit-link tooltip"></a>
       <a href="#multibao/documentation/blob/master/README.md" title="Aide" class="help-link tooltip"></a>
       <a href="#top" class="page-top">Haut de page</a>
     </aside>
@@ -21,7 +21,7 @@
       const {owner, repo, branch, path} = router.params
       const data = {
         github_url: githubApi.getGithubApiUrl(),
-        github_edit_url: githubApi.getGithubApiEditUrl(),
+        edit_url: githubApi.getGithubApiEditUrl(),
         content: htmlResponse,
         link: `#${owner}/${repo}/tree/${branch}/` +
           `${path.replace(/(\/|)[0-9A-Za-z\u00C0-\u017F\-\_\.]*$/, '')}`,

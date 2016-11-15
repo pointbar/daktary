@@ -77,7 +77,7 @@ class GithubUrl {
             resolve(htmlResponse)
           })
           .catch(error => {
-            console.log('fetch getHtmlBlob() : ' + error.message)
+            throw error
           })
       })}
   getMdBlob() {
@@ -89,7 +89,7 @@ class GithubUrl {
             resolve(mdResponse)
           })
           .catch(error => {
-            console.log('fetch getMdBlob() : ' + error.message)
+            throw error
           })
       })}
   getJsonRepo() {
@@ -101,7 +101,7 @@ class GithubUrl {
             resolve(json)
           })
           .catch(error => {
-            console.log('fetch getJsonRepo(): ' + error.message)
+            throw error
           })
       })}
   getJsonSearch(query) {
@@ -113,7 +113,7 @@ class GithubUrl {
             resolve(json)
           })
           .catch(error => {
-            console.log('fetch getJsonSearch(): ' + error.message)
+            throw error
           })
       })}
   getJsonFolders() {
@@ -125,7 +125,7 @@ class GithubUrl {
             resolve(this._listByFolder(this._listMd(json)))
           })
           .catch(error => {
-            console.log('fetch getJsonFolders(): ' + error.message)
+            throw error
           })
       })}
 }
