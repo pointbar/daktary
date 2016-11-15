@@ -13,9 +13,11 @@ babel --presets es2015 \
   ./src/layout-repositories.js \
   ./src/layout-searchList.js \
   ./src/layout-viewer.js \
+  ./src/layout-editor.js \
   ./src/routes.js \
   ./src/tpl-breadcrumb.js \
   ./src/tpl-contribution.js \
+  ./src/tpl-editor.js \
   ./src/tpl-crews.js \
   ./src/tpl-folders.js \
   ./src/tpl-repos.js \

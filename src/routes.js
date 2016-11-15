@@ -18,7 +18,7 @@ router.route(':owner/:repo/blob/:branch/:path(.*)', function () {
 })
 router.route(':owner/:repo/edit/:branch/:path(.*)', function () {
   this.currentRoute = 'edit'
-  layout.viewer.render()
+  layout.editor.render()
   document.querySelector('header').style.display = 'none'
 })
 router.route(':owner/:repo/tree/:branch/:path(.*)?', function () {
