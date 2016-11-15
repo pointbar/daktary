@@ -11,13 +11,11 @@
       À retrouver dans le dépôt : <a href="${link}">${label}</a>
     </div>
     <article id="contribution">
-      <form>
         <label for="commit-message">Description de la modification</label>
         <input id="commit-message" placeholder="Modification" name="message" autocomplete="off" type="text">
         <textarea id="commit-description" name="description" placeholder="Ajout d'une description additionnelle"></textarea>
         <button type="submit" id="submit-file">Enregistrer sur Github</button>
         <textarea rows="${row}" cols="72">${content}</textarea>
-      </form>
     </article>
   `
   template.editor = new Template('editor')
@@ -27,7 +25,7 @@
       const {owner, repo, branch, path} = router.params
       const data = {
         github_url: githubApi.getGithubApiUrl(),
-        edit_url: githubApi.getGithubApiEditUrl(),
+        edit_url: `#${router.url.replace('edit', 'blob')}`,
         content: htmlResponse,
         link: `#${owner}/${repo}/tree/${branch}/` +
           `${path.replace(/(\/|)[0-9A-Za-z\u00C0-\u017F\-\_\.]*$/, '')}`,

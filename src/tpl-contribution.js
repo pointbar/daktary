@@ -21,7 +21,7 @@
       const {owner, repo, branch, path} = router.params
       const data = {
         github_url: githubApi.getGithubApiUrl(),
-        edit_url: githubApi.getGithubApiEditUrl(),
+        edit_url: `#${router.url.replace('blob', 'edit')}`,
         content: htmlResponse,
         link: `#${owner}/${repo}/tree/${branch}/` +
           `${path.replace(/(\/|)[0-9A-Za-z\u00C0-\u017F\-\_\.]*$/, '')}`,
