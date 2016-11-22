@@ -1,6 +1,17 @@
 const template = {}
 const layout = {}
 
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false
+})
+
 window.addEventListener('hashchange', () => {
   const githubUrl = window.location.toString().split('#')[1]
   const anchor = document.querySelector(`a[name="${githubUrl}"]`)

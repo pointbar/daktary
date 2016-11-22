@@ -65,7 +65,7 @@ class GithubUrl {
   getHtmlBlob() {
     return new Promise(
       (resolve, reject) => {
-        fetch(this.toGithubApiUrl(), {headers: {Accept: 'application/vnd.github.v3.html'}})
+        fetch(this.toGithubApiUrl(), {headers: {Accept: 'application/vnd.github.v3.raw'}})
           .then(response => {
             if (response.ok) {
               return response.text()
@@ -74,7 +74,7 @@ class GithubUrl {
             }
           })
           .then(htmlResponse => {
-            resolve(htmlResponse)
+            resolve(marked(htmlResponse))
           })
           .catch(error => {
             throw error

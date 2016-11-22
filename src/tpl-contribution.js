@@ -3,7 +3,6 @@
     <a name="top"></a>
     <aside class="contribution-tools">
       <a href="${github_url}" title="Voir sur Github" class="github-link tooltip"></a>
-      <a href="${edit_url}" title="Editer la contribution" class="edit-link tooltip"></a>
       <a href="#multibao/documentation/blob/master/README.md" title="Aide" class="help-link tooltip"></a>
       <a href="#top" class="page-top">Haut de page</a>
     </aside>
