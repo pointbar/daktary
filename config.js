@@ -14,3 +14,5 @@ MULTIBAO.UVP1 = 'Partager et enrichir vos pratiques d\'équipe'
 MULTIBAO.UVP2 = 'Let\'s Do It Together'
 MULTIBAO.BUTTON1 = 'Découvrir'
 MULTIBAO.BUTTON2 = 'Espace contributeurs / bloggeurs'
+
+fetch('https://api-daktary.herokuapp.com/users').then(res => res.text()).then(json => console.log(json))
